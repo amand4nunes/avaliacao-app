@@ -1,0 +1,6 @@
+- Nome do produto deve conter mais de 1  caracter
+- O código do protudo deve conter apenas 4 digitos
+- A quantidade do protudo deve ser maior que 0 e menor 6
+- O valor do produto deve ser maior que 0.00
+- Se o troco for negativo ele deve ficar vermelho
+- Se o troco for positivo ou zero ele deve ficar verde

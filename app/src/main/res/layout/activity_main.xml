@@ -4,9 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity"
     android:background="#233f47"
-    >
+    tools:context=".MainActivity">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -80,7 +79,7 @@
                 android:layout_weight="1"
                 android:background="#fff"
                 android:hint="Preço"
-                android:inputType="number"
+                android:inputType="numberDecimal"
                 android:padding="15dp"
                 android:textColor="#000"
                 android:textSize="20sp" />
@@ -90,7 +89,7 @@
             android:id="@+id/botaoCadastrar"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="30dp"
+            android:layout_marginTop="10dp"
             android:background="#e01041"
             android:onClick="cadastrarProduto"
             android:padding="20dp"
@@ -115,13 +114,14 @@
             android:id="@+id/registro"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:visibility="gone"
             android:layout_marginTop="10dp"
             android:background="#fff"
-            app:layout_constraintTop_toBottomOf="@id/botaoFinalizar"
-            >
+            android:padding="5dp"
+            android:visibility="gone"
+            app:layout_constraintTop_toBottomOf="@id/botaoFinalizar">
 
             <TableRow>
+
                 <TextView
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
@@ -136,31 +136,89 @@
 
                 <TextView
                     android:id="@+id/name"
-                    android:layout_width="150dp"
+                    android:layout_width="120dp"
                     android:layout_height="wrap_content"
-                    android:text="Nome"
-                    />
+                    android:text="Nome" />
+
                 <TextView
                     android:id="@+id/cod"
                     android:layout_width="80dp"
                     android:layout_height="wrap_content"
-                    android:text="Codigo"
-                    />
+                    android:text="Codigo" />
+
                 <TextView
                     android:id="@+id/qtd"
                     android:layout_width="50dp"
                     android:layout_height="wrap_content"
-                    android:text="Qtd"
-                    />
+                    android:text="Qtd" />
+
                 <TextView
                     android:id="@+id/valor"
                     android:layout_width="50dp"
                     android:layout_height="wrap_content"
-                    android:text="valor"
-                    />
+                    android:text="valor" />
 
             </TableRow>
 
+            <TableRow
+                android:id="@+id/resultado"
+                android:visibility="gone">
+
+                <TextView
+                    android:id="@+id/textoValor"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="4"
+                    android:text="Valor total de itens registrados"
+                    android:textSize="15dp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/textValorTotalRegistrado"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="..."
+                    android:textStyle="bold" />
+            </TableRow>
+
         </TableLayout>
+
+        <LinearLayout
+            android:id="@+id/finalizarRegistro"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintTop_toBottomOf="@id/botaoFinalizar">
+
+            <EditText
+                android:id="@+id/pagamento"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:layout_weight="1"
+                android:background="#fff"
+                android:hint="Valor Recebido"
+                android:inputType="numberDecimal"
+                android:padding="15dp"
+                android:textColor="#000"
+                android:textSize="20sp" />
+
+            <TextView
+                android:id="@+id/troco"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="5dp"
+                android:layout_marginTop="8dp"
+                android:layout_weight="1"
+                android:background="#fff"
+                android:hint="Troco"
+                android:inputType="numberDecimal"
+                android:padding="15dp"
+                android:textColor="#000"
+                android:textSize="20sp" />
+        </LinearLayout>
+
+
     </LinearLayout>
 </ScrollView>
